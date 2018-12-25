@@ -1,0 +1,21 @@
+<form [formGroup]="dataForm" (ngSubmit)="onSubmit()" class="main-form">
+  <mat-form-field *ngFor="let attr of data; let i = index">
+    <mat-select placeholder="{{attr['value']}}" formControlName="attribute{{i+1}}">
+      <mat-option *ngFor="let op of attr['options']" [value]="op.value">
+        {{op.label}}
+      </mat-option>
+    </mat-select>
+    <mat-error *ngIf="dataForm.get('attribute'+(i+1)).hasError('required')">
+      {{attr['value']}} - обов'язкове поле
+    </mat-error>
+  </mat-form-field>
+  <button mat-raised-button>Прийняти</button>
+
+  <div class="result" *ngIf="res">
+    Результат: {{res | rez}}
+  </div>
+</form>
+
+
+
+

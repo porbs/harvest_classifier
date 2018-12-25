@@ -1,0 +1,12 @@
+.main-form {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  margin-top: 50px;
+  margin-left: calc((100% - 400px) / 2);
+}
+
+.result {
+  margin-top: 40px;
+  font-size: 20px;
+}
